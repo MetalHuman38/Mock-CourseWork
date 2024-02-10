@@ -1,0 +1,64 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - .backend:/app
+    command: >
+      sh -c "npm install && npm run"
+    environment:
+      - NODE_ENV=development
+      - DB_TYPE=${DB_TYPE}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASS}
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 3000:3000
+    volumes:
+      - .frontend:/app
+    command: >
+      sh -c "npm install && npm run pug-watch && npm start"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+
+  test:
+    build:
+      context: app
+      dockerfile: ./tests/Dockerfile
+    volumes:
+      - .tests:/app
+    command: >
+      sh -c "npm install && npm run test"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+
+volumes:
+  db:
+  postgres-data:
+  backend:
+  frontend:

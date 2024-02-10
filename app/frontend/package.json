@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "frontendDir",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "frontend:dev": "nodemon frontend/frontendRouter.js && pug -w CrudAPI.v1/app/frontend/views -o CrudAPI.v1/app/frontend/views -p",
+    "frontend:prod": "node frontend/frontendRouter.js"
+  },
+  "keywords": [
+    "views",
+    "indexpug",
+    "views"
+  ],
+  "author": "fabulous4",
+  "license": "ISC",
+  "dependencies": {
+    "postgres": "^3.4.3",
+    "pug": "^3.0.2"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backendDir",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "backend:dev": "nodemon backend/backendRouter.js",
+    "backend:prod": "node backend/backendRouter.js"
+  },
+  "keywords": [
+    "backend",
+    "controllers",
+    "models",
+    "routes",
+    "services",
+    "test"
+  ],
+  "author": "fabulous4",
+  "license": "ISC",
+  "dependencies": {
+    "postgres": "^3.4.3"
+  }
+}

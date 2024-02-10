@@ -1,0 +1,23 @@
+{
+  "name": "routes",
+  "version": "1.0.0",
+  "description": "router",
+  "main": "router.js",
+  "type": "module",
+  "scripts": {
+    "router:dev": "nodemon routes/router.js",
+    "router:prod": "node routes/router.js"
+  },
+  "keywords": [
+    "router"
+  ],
+  "author": "fabulous4",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.0.3",
+    "mocha": "^10.3.0"
+  },
+  "dependencies": {
+    "postgres": "^3.4.3"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "tester",
+  "main": "test.js",
+  "type": "module",
+  "scripts": {
+    "test:dev": "nodemon tests/test.js",
+    "test:prod": "node tests/test.js"
+  },
+  "keywords": [
+    "testcases"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.0.3",
+    "mocha": "^10.3.0"
+  },
+  "dependencies": {
+    "postgres": "^3.4.3"
+  }
+}
