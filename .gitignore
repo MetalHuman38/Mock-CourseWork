@@ -1,0 +1,16 @@
+# Node.js / Express
+node_modules/
+npm-debug.log
+.env
+
+# Pug
+*.pug.cache
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
