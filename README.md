@@ -1,5 +1,7 @@
 # Mock-CourseWork
 
+# Mock-CourseWork
+
 Mocked Coursework Project Setup
 
 This repository serves as a mock setup for our coursework project. It includes basic configurations and files to help us get started with the development process. Below is a brief overview of the project structure and the purpose of each file and directory:
