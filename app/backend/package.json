@@ -4,6 +4,7 @@
   "description": "backendDir",
   "main": "index.js",
   "type": "module",
+  "private": true,
   "scripts": {
     "backend:dev": "nodemon backend/backendRouter.js",
     "backend:prod": "node backend/backendRouter.js"
@@ -20,5 +21,8 @@
   "license": "ISC",
   "dependencies": {
     "postgres": "^3.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

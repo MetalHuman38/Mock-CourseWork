@@ -35,12 +35,7 @@ app.get('/', (req, res) => {
 // Use the routes
 app.use('.../backend', backendRouter);
 app.use('.../frontend', frontendRouter); // Use '/frontend' for frontend routes
-
-// Define route to render index.pug template
-app.get('../views', (req, res) => {
-  res.render('index'); // Render the index.pug template
-});
-
+app.use('.../tests', test);
 
 // Start the server function
 export function startServer() {

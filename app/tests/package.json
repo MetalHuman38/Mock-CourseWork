@@ -4,6 +4,7 @@
   "description": "tester",
   "main": "test.js",
   "type": "module",
+  "private": true,
   "scripts": {
     "test:dev": "nodemon tests/test.js",
     "test:prod": "node tests/test.js"
@@ -15,7 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^5.0.3",
-    "mocha": "^10.3.0"
+    "mocha": "^10.3.0",
+    "nodemon": "^3.0.3"
   },
   "dependencies": {
     "postgres": "^3.4.3"

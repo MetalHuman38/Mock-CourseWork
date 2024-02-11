@@ -4,9 +4,11 @@
   "description": "frontendDir",
   "main": "index.js",
   "type": "module",
+  "private": true,
   "scripts": {
-    "frontend:dev": "nodemon frontend/frontendRouter.js && pug -w CrudAPI.v1/app/frontend/views -o CrudAPI.v1/app/frontend/views -p",
-    "frontend:prod": "node frontend/frontendRouter.js"
+    "frontend:dev": "nodemon frontend/frontendRouter.js && npm start",
+    "frontend:prod": "node frontend/frontendRouter.js && && npm start",
+    "pug-watch": "pug -w CrudAPI.v1/app/frontend/views -o CrudAPI.v1/app/frontend/views -P"
   },
   "keywords": [
     "views",
@@ -16,7 +18,12 @@
   "author": "fabulous4",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.35.1",
     "postgres": "^3.4.3",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

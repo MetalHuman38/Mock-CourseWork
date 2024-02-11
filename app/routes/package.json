@@ -4,6 +4,7 @@
   "description": "router",
   "main": "router.js",
   "type": "module",
+  "private": true,
   "scripts": {
     "router:dev": "nodemon routes/router.js",
     "router:prod": "node routes/router.js"
@@ -15,7 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "chai": "^5.0.3",
-    "mocha": "^10.3.0"
+    "mocha": "^10.3.0",
+    "nodemon": "^3.0.3"
   },
   "dependencies": {
     "postgres": "^3.4.3"

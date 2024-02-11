@@ -3,11 +3,13 @@ version: '3.9'
 services:
   backend:
     build:
-      context: ./backend
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - .backend:/app
+      - .:/app
+      - /app/node_modules
     command: >
       sh -c "npm install && npm run"
     environment:
@@ -23,13 +25,15 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - 3000:3000
+      - 3001:3000
     volumes:
-      - .frontend:/app
+      - .:/app
+      - /app/node_modules
     command: >
-      sh -c "npm install && npm run pug-watch && npm start"
+      sh -c "npm install && pug-watch -w ./app/frontend/views -o ./app/frontend/views -p && npm start"
     environment:
       - NODE_ENV=development
     depends_on:
@@ -37,10 +41,11 @@ services:
 
   test:
     build:
-      context: app
-      dockerfile: ./tests/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - .tests:/app
+      - .:/app
+      - /app/node_modules
     command: >
       sh -c "npm install && npm run test"
     environment:

@@ -4,13 +4,18 @@
   "description": "middleware",
   "main": "middleware.js",
   "type": "module",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "middleware:dev": "nodemon middleware/middleware.js",
+    "middleware:prod": "node middleware/middleware.js"
   },
   "keywords": [
     "middleware",
     "file"
   ],
   "author": "fabulous4",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
 }
