@@ -6,9 +6,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "frontend:dev": "nodemon frontend/frontendRouter.js && npm start",
-    "frontend:prod": "node frontend/frontendRouter.js && && npm start",
-    "pug-watch": "pug -w CrudAPI.v1/app/frontend/views -o CrudAPI.v1/app/frontend/views -P"
+    "frontend:dev": "nodemon routes/frontendRouter.js",
+    "frontend:prod": "node routes/frontendRouter.js",
+    "pug:compile": "nodemon index.js",
+    "pug:watch": "pug -w views/index.pug -o views -P"
   },
   "keywords": [
     "views",
